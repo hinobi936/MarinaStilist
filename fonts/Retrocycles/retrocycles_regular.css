@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Retrocycles Regular';
+	src: url('../fonts/retrocycles_regular.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/retrocycles_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/retrocycles_regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/retrocycles_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/retrocycles_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/retrocycles_regular.svg#retrocycles_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}

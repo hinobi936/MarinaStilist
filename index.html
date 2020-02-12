@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Marina Stili</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- // Add the new slick-theme.css if you want the default styling -->
+  <link rel="stylesheet" type="text/css" href="js/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css" />
+  <!-- fotorama css -->
+  <link rel="stylesheet" href="js/fotorama/fotorama.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <script src="js/fontawesome.js"></script> -->
+</head>
+
+<body>
+  <header id="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          Marina Stili
+        </a>
+        <div class="cart-icon" >
+          <a href="#Modal_order" id="cart" class="d-flex align-items-center" data-toggle="modal">
+            <i class="fas fa-shopping-basket fa-2x" aria-hidden="true"></i>
+            <span class="counter ml-2">0</span>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+          aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ABOUT">Обо мне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#SERVICE">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#PORTFOLIO">Портфолио</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link " href="#">Прайс-лист</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="">
+    <div class="about_">
+      <!--       <div class="slider-about">
+        <div class="slider-about-img">
+          <img src="img/slider/1.jpg" />
+        </div>
+        <div class="slider-about-img">
+          <img src="img/slider/2.jpg" />
+        </div>
+        <div class="slider-about-img">
+          <img src="img/slider/3.jpg" />
+        </div>
+      </div>  -->
+      <section id="ABOUT" class="container text-center text-dark p-3">
+        <div class="row">
+          <div
+            class="col-md-8 text-center wow animated fadeInLeft about-text d-flex flex-wrap align-items-center align-content-center justify-content-center">
+            <div>
+              <h1 class="text-white"><span>Прически</span><br> <span>Макияж</span><br> <span>Свадебный стилист</span>
+              </h1>
+            </div>
+            <br>
+            <div class="w-100">
+              <a href="#form_">
+                <!-- <button class="btn order-button text-white">Оставить заявку</button> -->
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 wow animated fadeInRight my-auto ">
+            <div class="wrap-logo box-shadow">
+              <div class="border-logo">
+                <img src="IMG/logo.png" alt="" class="img-logo img-fluid" width="">
+              </div>
+            </div>
+            <div class="wrap-phone p-2 box-shadow">
+              <div class="border-phone">
+                <a href="tel:+7(904)305-24-24" class="text-white d-flex align-items-center justify-content-center">
+                  <i class="fas fa-mobile-alt fa-2x" aria-hidden="true"></i>
+                  <span class="phone mx-2">+7 (904) 305-24-24</span>
+                  <!--                     <i class="far fa-gem"></i>
+                    <i class="fas fa-gifts"></i>
+                    <i class="fas fa-magic"></i>
+                    <i class="far fa-question-circle"></i>
+                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-award"></i>  -->
+                </a>
+              </div>
+            </div>
+            <div class="social my-2">
+              <section class="icons text-center">
+                <a href="https://www.instagram.com/marina_stili/">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-square fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <a href="https://vk.com/club.marinastilist">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-square fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <a href="">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-square fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </section>
+            </div>
+            <div class="formWrapper text-center box-shadow">
+              <form action="">
+                <div class="form-group">
+                  <input type="name" class="form-control" id="exampleInputName" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                  <input type="telephone" class="form-control" id="exampleInputNumber" placeholder="Телефон"
+                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+                    placeholder="Email">
+                </div>
+
+                <div class="row align-items-end">
+                  <div class=" form-group col-md-12 col-lg-6">
+                    <label for="exampleInputDate">Дата</label>
+                    <input type="date" value="" class="form-control form-control-sm" id="exampleInputDate"
+                      aria-describedby="" placeholder="Enter day" required>
+                  </div>
+                  <div class="form-group col-md-12 col-lg-6">
+                    <label for="exampleInputTime">Время</label>
+                    <input type="time" class="form-control form-control-sm" id="exampleInputTime" aria-describedby=""
+                      placeholder="Enter time" required>
+                  </div>
+                </div>
+                <button class="btn order-button text-white"> Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr class="border">
+        <div class="row text-center d-flex align-items-stretchtext-left my-5 wow animated zoomIn" data-wow-duration="2s"
+          data-wow-delay=".5s" data-wow-offset="50">
+          <div class="col-md-4 mb-2 ">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-crown"></i>
+                <h5 class="card-title">Дипломированный свадебный стилист </h5>
+                <p class="card-text m-1">- школа свадебных стилистов <strong>Анны Комаровой</strong> "Websalon WEDDING"
+                  г. Москва
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2 ">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-crown"></i>
+                <h5 class="card-title">Обучение коммерческим прическам</h5>
+                <p class="card-text m-1">- мастер международного класса победителя Золотой Диплом от <strong>Георгия Кот
+                    - Антонины Романовой</strong> г. Москва
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2 ">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-crown"></i>
+                <h5 class="card-title">Курс "Стилист по прическам" Lova Studio" г. Челябинск</h5>
+                <p class="card-text m-1"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <hr class="my-md-2">
+    <div class="service_ p-3">
+      <section id="SERVICE" class="container text-center my-5">
+        <h2 class="py-3">Услуги стилиста</h2>
+        <div class="card-deck" id="card-deck">
+          <div class="card-wrapper col-lg-4 col-md-6 col-sm-6 mb-4">
+            <div class="card text-dark">
+              <img src="https://sun9-53.userapi.com/c858424/v858424881/a438/3phIWB__5sw.jpg" alt=""
+                class="card-img-top">
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold">Свадебная прическа</h4>
+                <p class="card-text">Закажите причёску для свадьбы, которая будет прекрасно держаться в течение всего
+                  дня.</p>
+              </div>
+              <div class="card-footer">
+                <span class="">1500 руб</span>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal_more">Подробнее
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn order-button text-white" data-toggle="modal"
+                    data-target="#Modal_order">Заказать
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <hr class="border my-md-2">
+    <div class="portfolio_">
+      <section id="PORTFOLIO" class=" text-center text-dark my-5">
+        <div class="bg-white">
+          <h2 class="py-3">Портфолио</h2>
+        </div>
+        <div class="slider-portfolio">
+          <div class="fotorama" data-nav="thumbs">
+            <img src="https://sun9-66.userapi.com/c851024/v851024076/18703b/8hVUMpuzYHg.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-18.userapi.com/c851424/v851424023/1743b3/ONhQAgAwark.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-53.userapi.com/c858424/v858424881/a438/3phIWB__5sw.jpg" alt="1"
+              class="img img-thumb">
+
+            <img src="https://sun9-30.userapi.com/c638323/v638323383/5215e/S1UPisodSbQ.jpg" alt="1"
+              class="img img-thumb">
+
+            <img src="https://sun9-2.userapi.com/c849520/v849520227/604f8/qD2bjl-1hTE.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-69.userapi.com/c846122/v846122711/1eaaae/pKBMZMTLSZQ.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-2.userapi.com/c847021/v847021007/195b93/ikkJ4K3GBYw.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-18.userapi.com/c851132/v851132752/cb28a/YIOQMZlPf1s.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-32.userapi.com/c846216/v846216964/12e255/sICqOLULr4I.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-46.userapi.com/c855016/v855016784/95ae4/C1Eajn0WGzo.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-3.userapi.com/c857636/v857636041/c413/CtyoutoL26k.jpg" alt="1" class="img img-thumb">
+            <img src="https://sun9-2.userapi.com/c852320/v852320872/fb5a1/YTkwhFOcstM.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-15.userapi.com/c845019/v845019632/1eab38/tJtWWjrcfDo.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-45.userapi.com/c852124/v852124872/fc0ad/F0T5yZwEymw.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-40.userapi.com/c849136/v849136555/109c18/GD9mpMUHSe4.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-2.userapi.com/c638825/v638825383/2f429/_TFuCBa2JeI.jpg" alt="1"
+              class="img img-thumb">
+            <img src="https://sun9-19.userapi.com/c638825/v638825383/2f523/Gi2nXhYghS0.jpg" alt="1"
+              class="img img-thumb">
+          </div>
+        </div>
+    </div>
+    </section>
+    </div>
+    <hr class="my-md-2">
+    <div class="advantages_">
+      <section id="ADVANTAGES" class="container text-center my-5">
+        <div class="">
+          <h2 class="py-3">Наши преимущества</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="fas fa-2x fa-stopwatch"></i>
+              <h5>Прически держатся до 48 часов</h5>
+              <small>Защита ваших волос гарантируется <strong>Schwartzkopf</strong>.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="far fa-2x fa-check-circle"></i>
+              <h5>Все включено</h5>
+              <small>В стоимость причёски включены расходные материалы: шпильки, невидимки, валики для волос.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="far fa-2x fa-thumbs-up"></i>
+              <h5>100% гарантия</h5>
+              <small>Мы гарантируем совершенство вашего образа.</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="fas fa-2x fa-user-check"></i>
+              <h5>Бесплатная консультация</h5>
+              <small>Узнайте все подробности по телефону:
+                <a href="tel:+7(904)304-24-24" class="text-dark d-flex align-items-center justify-content-center">
+                  <h5 class="phone my-2">+7-904-304-24-24</h5>
+                </a>
+              </small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="fas fa-2x fa-percent"></i>
+              <h5>Акции и скидки</h5>
+              <small>Для вас мы подготовили выгодные акции и скидки.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage text-center p-3">
+              <i class="fas fa-2x fa-map-marked-alt"></i>
+              <h5>Выезд</h5>
+              <small>Работаем в удобном для вас месте.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <hr class="my-md-2">
+
+    <div class="form_">
+      <section class="container" id="FORM">
+        <div class="row mobile text-center">
+          <div class="col-12">
+            <h3>Записаться на посещение или заказать обратный звонок</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4 offset-lg-2">
+            <div class="formWrapper text-center box-shadow">
+              <form action="">
+                <div class="form-group">
+                  <input type="name" class="form-control" id="exampleInputName1" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                  <input type="telephone" class="form-control" id="exampleInputNumber1" placeholder="Телефон"
+                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Email">
+                </div>
+
+                <div class="row align-items-end">
+                  <div class=" form-group col-sm-12 col-md-6 ">
+                    <label for="exampleInputDate">Дата</label>
+                    <input type="date" value="" class="form-control form-control-sm" id="exampleInputDate1"
+                      aria-describedby="" placeholder="Enter day" required>
+                  </div>
+                  <div class="form-group col-sm-12 col-md-6">
+                    <label for="exampleInputTime">Время</label>
+                    <input type="time" class="form-control form-control-sm" id="exampleInputTime1" aria-describedby=""
+                      placeholder="Enter time" required>
+                  </div>
+                </div>
+                <button class="btn btn-primary"> Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4 tablet">
+            <h2 class="m-auto">Записаться на посещение или заказать обратный звонок</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="container-fluid py-3 text-center text-white">
+    <div class="container pb-3">
+      <section class="icons text-center">
+        <a href="https://www.instagram.com/marina_stili/">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-square fa-stack-2x"></i>
+            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="https://vk.com/club.marinastilist">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-square fa-stack-2x"></i>
+            <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-square fa-stack-2x"></i>
+            <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </section>
+    </div>
+    Copyright © Hinobi
+  </footer>
+  <!-- ==================================================КОРЗИНА================================================== -->
+
+  <!-- ==================================================ЗАКАЗАТЬ================================================== -->
+
+  <div class="modal fade" id="Modal_order" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title">Ваш заказ</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="basket">
+            <div class="container-fluid order border">
+              <div class="row align-items-center">
+                <div class="col-3">
+                  <img src="img/Service/Wedding/wedding-1.jpg">
+                </div>
+                <div class="col-7">
+                  <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-4">
+                      <span class="order-name">Свадебная прическа</span>
+                    </div>
+                    <div class="col-8 col-md-5 count">
+                      <div class="row align-items-center justify-content-center">
+                        <div class="col-8">
+                          <span class="volume"><input type="" name="Количество"></span>
+                        </div>
+                        <div class="col-4">
+                          <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                          <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-md-3">
+                      <span class="price">1500р</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <button type="button" class="close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container summ ml-auto">
+            <p class="mr-3">Сумма:</p>
+            <span class="">1500р.</span>
+          </div>
+          <div class="container text-center">
+            <form class="" action="">
+              <div class="form-row">
+                <div class="col-sm-6 offset-sm-3 mb-3">
+                  <input type="name" class="form-control" placeholder="Ваше имя" name="" required>
+                </div>
+                <div class="col-sm-6 offset-sm-3 mb-3">
+                  <input type="telephone" class="form-control" placeholder="Ваш телефон" name="" required>
+                </div>
+              </div>
+              <button type="submit" class="order-button btn btn-dark">Отправить заявку</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center text-center">
+          <small class="text-center">Нажимая кнопку "Заказать", даю свое согласие на <a href="#">обработку персональных
+              данных</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ==================================================Подробнее================================================= -->
+  <div class="modal fade" id="Modal_more">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Свадебная прическа</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="fotorama" data-nav="thumbs">
+                <img src="img/Service/Wedding/wedding-1.jpg" alt="">
+                <img src="img/Service/Wedding/wedding-2.jpg" alt="">
+                <img src="img/Service/Wedding/wedding-3.jpg" alt="">
+                <img src="img/Service/Wedding/wedding-4.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <p>Легкие небрежные локоны и упругие спиральные кудри всегда в моде!
+                Такая прическа идет практически всем, главное – подобрать подходящий образ.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="js/modules/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <!-- slick -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="js/slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/slick/slick.js"></script>
+  <script type="text/javascript" src="js/js.js"></script>
+
+  <!-- fotorama css -->
+  <script type="text/javascript" src="js/fotorama/fotorama.js"></script>
+
+  <script src="js/Script.js"></script>
+</body>
+
+</html>
