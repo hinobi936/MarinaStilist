@@ -33,7 +33,7 @@
         <div class="cart-icon" >
           <a href="#Modal_order" id="cart" class="d-flex align-items-center" data-toggle="modal">
             <i class="fas fa-shopping-basket fa-2x" aria-hidden="true"></i>
-            <span class="counter ml-2">0</span>
+            <span class="ml-2" id="cartCounter">0</span>
           </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
@@ -436,7 +436,7 @@
             <div class="container-fluid order border">
               <div class="row align-items-center">
                 <div class="col-3">
-                  <img src="img/Service/Wedding/wedding-1.jpg">
+                  <img src="img/Service/Wedding/20.jpg">
                 </div>
                 <div class="col-7">
                   <div class="row align-items-center">
@@ -497,7 +497,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Свадебная прическа</h4>
+          <h4 class="modal-title" id="type">Свадебная прическа</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
@@ -507,20 +507,20 @@
           <div class="row">
             <div class="col-md-5">
               <div class="fotorama" data-nav="thumbs">
-                <img src="img/Service/Wedding/wedding-1.jpg" alt="">
-                <img src="img/Service/Wedding/wedding-2.jpg" alt="">
-                <img src="img/Service/Wedding/wedding-3.jpg" alt="">
-                <img src="img/Service/Wedding/wedding-4.jpg" alt="">
+                <img src="img/Service/Wedding/17.jpg" alt="">
+                <img src="img/Service/Wedding//22.jpg" alt="">
+                <img src="img/Service/Wedding/26.jpg" alt="">
+                <img src="img/Service/Wedding/7.jpg" alt="">
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7" id="description">
               <p>Легкие небрежные локоны и упругие спиральные кудри всегда в моде!
                 Такая прическа идет практически всем, главное – подобрать подходящий образ.</p>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary add-to-cart">Оставить заявку</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

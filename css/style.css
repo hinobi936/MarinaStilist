@@ -303,7 +303,8 @@ footer {
 .btn-primary{
 	background-color: rgb(207, 118, 160) !important;
 }
-.modal-content .fotorama__img {
+.modal-content img {
+	max-width: 100% !important;
 	max-height: 100% !important;
 	margin: auto;
 	top: 0px !important;
@@ -314,11 +315,12 @@ footer {
 }
 
 .card-img-top {
-    max-height: 30vh;
-    min-height: 30vh;
+    max-height: 45vh;
+    min-height: 45vh;
     object-fit: scale-down;
     padding: 10px;
-    /* background: linear-gradient(#df93b6, #ffffff); */
+	/* background: linear-gradient(#df93b6, #ffffff); */
+	background: linear-gradient(#c6c0fd, #ffffff);
 }
 
 .slider-about{
