@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let wishList = [];
   let cart = {};
 
-  console.log(orderButton.length);
-  console.log(orderButton);
-
+  // console.log(orderButton);
 
   // загрузка услуг на страницу
   loadService();
@@ -24,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'card-wrapper col-lg-4 col-md-6 col-sm-6 mb-4';
     card.innerHTML = out;
     cardDeck.append(card);
+    checkCart();
   }
 
   function loadService() {
@@ -32,25 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
       let out;
       for (var key in data) {
         out = `<div class="card text-dark">
-                            <img src="${data[key]['img']}" alt=""
-                                class="card-img-top">
-                            <div class="card-body text-center">
-                                <h4 class="card-title font-weight-bold">${data[key]['type']}</h4>
-                                <p class="card-text">${data[key]['text']}</p>
-                            </div>
-                            <div class="card-footer">
-                                <span class="">${data[key]['price']} руб</span>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                <button type="button" class="btn btn-more more-info" data-id=${key} data-toggle="modal" data-target="#Modal_more">Подробнее
-                                </button>
-                                </div>
-                                <div class="col-md-6">
-                                <button type="button" class="btn order-button text-white add-to-cart" data-id=${key}>Заказать</button>
-                                </div>
-                            </div>
-                            </div>`
+                  <img src="${data[key]['img']}" alt=""
+                      class="card-img-top">
+                  <div class="card-body text-center">
+                      <h4 class="card-title font-weight-bold">${data[key]['type']}</h4>
+                      <p class="card-text">${data[key]['text']}</p>
+                  </div>
+                  <div class="card-footer">
+                      <span class="">${data[key]['price']} руб</span>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                      <button type="button" class="btn btn-more more-info" data-id=${key} 
+                      data-toggle="modal" data-target="#Modal_more">Подробнее
+                      </button>
+                      </div>
+                      <div class="col-md-6">
+                      <button type="button" class="btn order-button add-to-cart" data-id=${key}>
+                      Заказать</button>
+                      </div>
+                  </div>
+              </div>`
         printServices(out);
       }
       // console.log(out);    
@@ -111,9 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const changeButtonAdd = target => {
-    console.log(target.style);
+    // console.log(target.style);
     target.textContent = 'В корзине';
     target.style.backgroundColor = "#777777";
+    target.style.color = "#fff"
   }
 
   function checkCount() {
@@ -149,14 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart);
+    // console.log(cart);
     // перебор коллекции кнопок
-    if (orderButton.length>0) {
+    if (orderButton.length > 0) {
 
       for (var i = 0; i < orderButton.length; i++) {
         let id = orderButton[i].dataset.id;
-        console.log(id);
-        console.log(orderButton[i]);
+        // console.log(id);
+        // console.log(orderButton[i]);
         // перебор корзины localStorage
         for (let j = 0; j < Object.keys(cart).length; j++) {
           if (cart.hasOwnProperty(id)) {
@@ -166,12 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log(orderButton[i]);
       }
     }
-    console.log(Object.keys(cart).length);
+    // console.log(Object.keys(cart).length);
     // console.log(localStorage.getItem('cart'));
   }
 
   // прослушиватель событий кнопок в "услугах"
   cardDeck.addEventListener('click', handlerCard);
+
 
 
 
