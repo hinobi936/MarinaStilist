@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-id=${id}>Оставить заявку</button>
+                <button type="button" class="btn" data-id=${id}>Оставить заявку</button>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->`;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const changeButtonAdd = target => {
-    console.log(target.style);
+    console.log(target);
     target.textContent = 'В корзине';
     target.style.backgroundColor = "#777777";
   }
@@ -143,13 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkCart() {
     // проверка наличия корзины в localStorage
     if (localStorage.getItem('cart') != null) {
-      cart = JSON.parse(localStorage.getItem('cart'));
+      // cart = JSON.parse(localStorage.getItem('cart'));
       for (let i = 0; i < orderButton.length; i++) {
-        for(let j=0; j<Object.keys(cart).length; j++){
-          id=orderButton[i].dataset.id;
+        console.log(orderButton[i]);
+
+        for (let j = 0; j < Object.keys(cart).length; j++) {
+          console.log(orderButton.length);
+          let id = orderButton[i].dataset.id;
           console.log(id);
-        
-          if (cart.hasOwnProperty(id)){
+
+          if (cart.hasOwnProperty(id)) {
             changeButtonAdd(orderButton[i]);
           }
         }
