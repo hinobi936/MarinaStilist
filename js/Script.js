@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let wishList = [];
   let cart = {};
 
+  console.log(orderButton.length);
   console.log(orderButton);
+
 
   // загрузка услуг на страницу
   loadService();
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn" data-id=${id}>Оставить заявку</button>
+                <button type="button" class="btn btn-primary" data-id=${id}>Оставить заявку</button>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->`;
@@ -109,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const changeButtonAdd = target => {
-    console.log(target);
+    console.log(target.style);
     target.textContent = 'В корзине';
     target.style.backgroundColor = "#777777";
   }
@@ -142,25 +144,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function checkCart() {
     // проверка наличия корзины в localStorage
-    if (localStorage.getItem('cart') != null) {
-      // cart = JSON.parse(localStorage.getItem('cart'));
-      for (let i = 0; i < orderButton.length; i++) {
+    if (localStorage.getItem('cart') == null) {
+      return;
+    }
+
+    cart = JSON.parse(localStorage.getItem('cart'));
+    console.log(cart);
+    // перебор коллекции кнопок
+    if (orderButton.length>0) {
+
+      for (var i = 0; i < orderButton.length; i++) {
+        let id = orderButton[i].dataset.id;
+        console.log(id);
         console.log(orderButton[i]);
-
+        // перебор корзины localStorage
         for (let j = 0; j < Object.keys(cart).length; j++) {
-          console.log(orderButton.length);
-          let id = orderButton[i].dataset.id;
-          console.log(id);
-
           if (cart.hasOwnProperty(id)) {
             changeButtonAdd(orderButton[i]);
           }
         }
-        console.log(orderButton[i]);
+        // console.log(orderButton[i]);
       }
-
-      console.log(Object.keys(cart).length);
     }
+    console.log(Object.keys(cart).length);
     // console.log(localStorage.getItem('cart'));
   }
 
