@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'card-wrapper col-lg-4 col-md-6 col-sm-6 mb-4';
     card.innerHTML = out;
     cardDeck.append(card);
-    checkCart();
+    console.log();
+    // checkCart();
   }
 
   function loadService() {
@@ -47,14 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
                       </button>
                       </div>
                       <div class="col-md-6">
-                      <button type="button" class="btn order-button add-to-cart" data-id=${key}>
-                      Заказать</button>
+                      <button type="button" class="btn order-button add-to-cart ${cart.hasOwnProperty(key) ? 'order-active' : ''}" data-id=${key}>
+                      ${cart.hasOwnProperty(key) ? 'В корзине' : 'Заказать'}</button>
                       </div>
                   </div>
               </div>`
         printServices(out);
+        // console.log(key);
       }
-      // console.log(out);    
     })
   }
 
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="modal-body">
                 <div class="row">
                   <div class="col-md-5">
-                    <div class="fotorama" data-nav="thumbs">
+                    <div id="fotorama" class="fotorama" data-nav="thumbs">
                       <img src="${data[id].img}" alt="">
                       <img src="${data[id].img}" alt="">
                       <img src="${data[id].img}" alt="">
@@ -116,12 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
     target.textContent = 'В корзине';
     target.style.backgroundColor = "#777777";
     target.style.color = "#fff"
+    target.classList.add('order-active');
   }
 
   function checkCount() {
     // подсчет количества в корзине
     cartCounter.textContent = Object.keys(cart).length;
-    // console.log(cartCounter);
   }
 
   const handlerCard = event => {
@@ -153,21 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
     cart = JSON.parse(localStorage.getItem('cart'));
     // console.log(cart);
     // перебор коллекции кнопок
-    if (orderButton.length > 0) {
-
-      for (var i = 0; i < orderButton.length; i++) {
-        let id = orderButton[i].dataset.id;
-        // console.log(id);
-        // console.log(orderButton[i]);
-        // перебор корзины localStorage
-        for (let j = 0; j < Object.keys(cart).length; j++) {
-          if (cart.hasOwnProperty(id)) {
-            changeButtonAdd(orderButton[i]);
-          }
-        }
-        // console.log(orderButton[i]);
-      }
-    }
+    // if (orderButton.length > 0) {
+    //   for (var i = 0; i < orderButton.length; i++) {
+    //     let id = orderButton[i].dataset.id;
+    //     // перебор корзины localStorage
+    //     for (let j = 0; j < Object.keys(cart).length; j++) {
+    //       if (cart.hasOwnProperty(id)) {
+    //         changeButtonAdd(orderButton[i]);
+    //       }
+    //     }
+    //   }
+    // }
     // console.log(Object.keys(cart).length);
     // console.log(localStorage.getItem('cart'));
   }

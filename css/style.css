@@ -316,6 +316,11 @@ footer {
 	background-color: rgba(193,54,118, 1);
 	color: #ffffff;
 }
+
+.order-active{
+	background-color: #777777;
+	color: #ffffff;
+}
 .btn-more{
 	background-color: rgb(207, 118, 160);
 	color: #ffffff;
