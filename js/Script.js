@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div><!-- /.modal-dialog -->`;
       console.log(out);
       modalInfo.innerHTML = out;
-      // eval(modalInfo);
     })
   }
 
@@ -140,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // узнать подробнее
       // console.log(target.dataset);
       showMoreInfo(target.dataset.id);
-
     }
     // добавить в избранное
   }
@@ -150,38 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('cart') == null) {
       return;
     }
-
     cart = JSON.parse(localStorage.getItem('cart'));
-    // console.log(cart);
-    // перебор коллекции кнопок
-    // if (orderButton.length > 0) {
-    //   for (var i = 0; i < orderButton.length; i++) {
-    //     let id = orderButton[i].dataset.id;
-    //     // перебор корзины localStorage
-    //     for (let j = 0; j < Object.keys(cart).length; j++) {
-    //       if (cart.hasOwnProperty(id)) {
-    //         changeButtonAdd(orderButton[i]);
-    //       }
-    //     }
-    //   }
-    // }
-    // console.log(Object.keys(cart).length);
-    // console.log(localStorage.getItem('cart'));
-  }
+    }
 
   // прослушиватель событий кнопок в "услугах"
   cardDeck.addEventListener('click', handlerCard);
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
