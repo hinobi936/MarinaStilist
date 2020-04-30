@@ -554,6 +554,20 @@
     var fotorama = $slider.data('fotorama');
   </script>
 
+  <script>
+    $(function () {
+      // 1. Initialize fotorama manually.
+      var $fotoramaDiv = $('#fotorama').fotorama();
+
+      // 2. Get the API object.
+      var fotorama = $fotoramaDiv.data('fotorama');
+
+      // 3. Inspect it in console.
+      console.log(fotorama);
+    });
+  </script>
+
+
   <script src="js/Script.js"></script>
 </body>
 
