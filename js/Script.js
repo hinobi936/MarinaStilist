@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     cart = JSON.parse(localStorage.getItem('cart'));
-    }
+  }
 
   // прослушиватель событий кнопок в "услугах"
   cardDeck.addEventListener('click', handlerCard);
