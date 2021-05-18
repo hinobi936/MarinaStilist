@@ -1,12 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  const cartBtn = document.getElementById('cart');
-  const cardWrapper = document.querySelector('.card-wrapper');
-  const modalInfo = document.getElementById('Modal_more');
-  const modalCart = document.getElementById('Modal_order');
-  let cardDeck = document.getElementById('card-deck');
-  let cartCounter = document.getElementById('cartCounter');
-  const orderButton = document.getElementsByClassName('add-to-cart');
+document.addEventListener("DOMContentLoaded", () => {
+  const cartBtn = document.getElementById("cart");
+  const cardWrapper = document.querySelector(".card-wrapper");
+  const modalInfo = document.getElementById("Modal_more");
+  const modalCart = document.getElementById("Modal_cart");
+  let cardDeck = document.getElementById("card-deck");
+  const cartCounter = document.getElementById("cartCounter");
+  const orderButton = document.getElementsByClassName("add-to-cart");
   let wishList = [];
   let cart = {};
 
@@ -18,28 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
   checkCount();
 
   const printServices = (out) => {
-    let card = document.createElement('div');
-    card.className = 'card-wrapper col-lg-4 col-md-6 col-sm-6 mb-4';
+    let card = document.createElement("div");
+    card.className = "card-wrapper col-lg-4 col-md-6 col-sm-6 mb-4";
     card.innerHTML = out;
     cardDeck.append(card);
     console.log();
     // checkCart();
-  }
+  };
 
   function loadService() {
-    $.getJSON('service.json', function (data) {
+    $.getJSON("service.json", function (data) {
       // console.log(data);
       let out;
       for (var key in data) {
         out = `<div class="card text-dark">
-                  <img src="${data[key]['img']}" alt=""
+                  <img src="${data[key]["img"]}" alt=""
                       class="card-img-top">
                   <div class="card-body text-center">
-                      <h4 class="card-title font-weight-bold">${data[key]['type']}</h4>
-                      <p class="card-text">${data[key]['text']}</p>
+                      <h4 class="card-title font-weight-bold">${
+                        data[key]["type"]
+                      }</h4>
                   </div>
                   <div class="card-footer">
-                      <span class="">${data[key]['price']} руб</span>
+                      <span class="">${data[key]["price"]} руб</span>
                   </div>
                   <div class="row">
                       <div class="col-md-6">
@@ -48,35 +48,39 @@ document.addEventListener('DOMContentLoaded', () => {
                       </button>
                       </div>
                       <div class="col-md-6">
-                      <button type="button" class="btn order-button add-to-cart ${cart.hasOwnProperty(key) ? 'order-active' : ''}" data-id=${key}>
-                      ${cart.hasOwnProperty(key) ? 'В корзине' : 'Заказать'}</button>
+                      <button type="button" class="btn order-button add-to-cart 
+                      ${
+                        cart.hasOwnProperty(key) ? "order-active" : ""
+                      }" data-id=${key}>
+                      ${
+                        cart.hasOwnProperty(key) ? "В корзине" : "Заказать"
+                      }</button>
                       </div>
                   </div>
-              </div>`
+              </div>`;
         printServices(out);
         // console.log(key);
       }
-    })
+    });
   }
 
-  const addToCart = id => {
+  const addToCart = (id) => {
     // добавление услуги в корзину
     let serviceId = id;
     if (cart[serviceId] != undefined) {
       cart[serviceId]++;
       // console.log(cart);
-    }
-    else {
+    } else {
       cart[serviceId] = 1;
       // console.log(cart);
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
 
-  const showMoreInfo = id => {
+  const showMoreInfo = (id) => {
     // modalInfo.innerHTML='';
     let out;
-    $.getJSON('service.json', function (data) {
+    $.getJSON("service.json", function (data) {
       out = `<div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -108,50 +112,73 @@ document.addEventListener('DOMContentLoaded', () => {
           </div><!-- /.modal-dialog -->`;
       console.log(out);
       modalInfo.innerHTML = out;
-    })
-  }
+    });
+  };
 
-  const changeButtonAdd = target => {
+  const changeButtonAdd = (target) => {
     // console.log(target.style);
-    target.textContent = 'В корзине';
+    target.textContent = "В корзине";
     target.style.backgroundColor = "#777777";
-    target.style.color = "#fff"
-    target.classList.add('order-active');
-  }
+    target.style.color = "#fff";
+    target.classList.add("order-active");
+  };
 
   function checkCount() {
     // подсчет количества в корзине
     cartCounter.textContent = Object.keys(cart).length;
   }
 
-  const handlerCard = event => {
+  const handlerCard = (event) => {
     // обработчик добавления в корзину и wishList
     const target = event.target;
     // добавить в корзину
-    if (target.classList.contains('add-to-cart')) {
+    if (target.classList.contains("add-to-cart")) {
       // console.log(event);
       // console.log(target.dataset);
       addToCart(target.dataset.id);
       changeButtonAdd(target);
       checkCount();
     }
-    if (target.classList.contains('more-info')) {
+    if (target.classList.contains("more-info")) {
       // узнать подробнее
       // console.log(target.dataset);
       showMoreInfo(target.dataset.id);
     }
     // добавить в избранное
-  }
+  };
 
   function checkCart() {
     // проверка наличия корзины в localStorage
-    if (localStorage.getItem('cart') == null) {
+    if (localStorage.getItem("cart") == null) {
       return;
     }
-    cart = JSON.parse(localStorage.getItem('cart'));
+    cart = JSON.parse(localStorage.getItem("cart"));
   }
 
-  // прослушиватель событий кнопок в "услугах"
-  cardDeck.addEventListener('click', handlerCard);
+  const openModal = (event) => {
+    //написать открывашку окна
+    modalCart.style.display = "block";
+    // modalCart.style.opacity = "100%";
+  };
 
-})
+  const closeModal = (event) => {
+    //написать открывашку окна
+    let close = event.target;
+    if (
+      close.classList.contains("popup") ||
+      close.classList.contains("popup-close")
+    ) {
+      // modalCart.style.opacity = "0%";
+      modalCart.style.display = "none";
+
+      console.log(event.target.classList);
+    }
+  };
+
+  // прослушиватель событий кнопок в "услугах"
+  cardDeck.addEventListener("click", handlerCard);
+
+  cartBtn.addEventListener("click", openModal);
+
+  modalCart.addEventListener("click", closeModal);
+});

@@ -31,7 +31,7 @@
           Marina Stili
         </a>
         <div class="cart-icon">
-          <a href="#Modal_order" id="cart" class="d-flex align-items-center" data-toggle="modal">
+          <a href="#Modal_cart" id="cart" class="d-flex align-items-center" data-toggle="">
             <i class="fas fa-shopping-basket fa-2x" aria-hidden="true"></i>
             <span class="ml-2" id="cartCounter">0</span>
           </a>
@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-md-6">
                   <button type="button" class="btn order-button text-white" data-toggle="modal"
-                    data-target="#Modal_order">Заказать
+                    data-target="#Modal_cart">Заказать
                   </button>
                 </div>
               </div>
@@ -414,9 +414,9 @@
   </footer>
   <!-- ==================================================КОРЗИНА================================================== -->
 
-  <!-- ==================================================ЗАКАЗАТЬ================================================== -->
+  <!-- ==================================================ЗАКАЗАТЬ bootstrap ================================================== -->
 
-  <div class="modal fade" id="Modal_order" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+  <div class="modal fade" id= tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -487,6 +487,44 @@
       </div>
     </div>
   </div>
+
+  <!-- ==================================================ЗАКАЗАТЬ моя версия ================================================== -->
+  <div class="popup" id="Modal_cart" >
+    <div class="popup-dialog">
+      <div class="popup-content">
+        <button class="popup-close">&times;</button>
+        <h4 class="popup-header">Ваш заказ</h4>
+        <div class="popup-form">
+          <form method="get" action="#">
+          </form>
+          <div class="popup-body list list-items">
+            <div class="list-item">
+              <img src="img/Service/Wedding/20.jpg" alt="свадебная прическа">
+              <div>
+                <div class="list-item info">
+                  <span>Cвадебная прическа</span>
+                </div>
+                <div class="count-price">
+                  <div class="list-item count">
+                    <button class="minus">&ndash;</button>
+                    <input type="number" maxlength="2" value="1">
+                    <button class="plus">+</button>
+                  </div>
+                  <div class="list-item price">
+                    1500 р
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================================================Подробнее================================================= -->
   <div class="modal fade" id="Modal_more">
     <div class="modal-dialog modal-lg" role="document">
