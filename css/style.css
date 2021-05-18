@@ -521,6 +521,7 @@ footer {
 }
 .popup-dialog {
   min-width: 320px;
+  height: 500px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -528,6 +529,7 @@ footer {
   /* max-width: 700px; */
   background-color: #fff;
   padding: 10px;
+  overflow-y: scroll;
 }
 .popup-close {
   position: absolute;
@@ -547,7 +549,7 @@ footer {
 .list-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 5px;
 }
 
@@ -564,7 +566,7 @@ footer {
 .count-price {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .plus,

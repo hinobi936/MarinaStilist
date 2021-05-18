@@ -2,14 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartBtn = document.getElementById("cart");
   const cardWrapper = document.querySelector(".card-wrapper");
   const modalInfo = document.getElementById("Modal_more");
+  const modalContent = document.querySelector("modal-content");
   const modalCart = document.getElementById("Modal_cart");
+  const cartList = document.querySelector(".cart-list");
   let cardDeck = document.getElementById("card-deck");
   const cartCounter = document.getElementById("cartCounter");
   const orderButton = document.getElementsByClassName("add-to-cart");
   let wishList = [];
   let cart = {};
 
-  // console.log(orderButton);
+  // console.log(cartList);
 
   // загрузка услуг на страницу
   loadService();
@@ -78,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showMoreInfo = (id) => {
-    // modalInfo.innerHTML='';
     let out;
     $.getJSON("service.json", function (data) {
       out = `<div class="modal-dialog modal-lg" role="document">
@@ -155,7 +156,43 @@ document.addEventListener("DOMContentLoaded", () => {
     cart = JSON.parse(localStorage.getItem("cart"));
   }
 
+  function printCart(out) {
+    let cartOut = "";
+    cartOut = document.createElement("div");
+    cartOut.className = "list-item";
+    cartOut.innerHTML = out;
+    console.log(cartList);
+    cartList.append(cartOut);
+    // checkCart();
+  }
+
   const openModal = (event) => {
+    // прочитать карточки из local storage
+    // console.log(cart);
+    cartList.textContent = "";
+    let out = "";
+    $.getJSON("service.json", function (data) {
+      // console.log(data);
+      for (var key in cart) {
+        out = `<img src="${data[key].img}" alt="${data[key].type}">
+        <div class="info">
+          <div class="list-item type">
+            <span>${data[key].type}</span>
+          </div>
+          <div class="count-price">
+            <div class="list-item count">
+              <button class="minus">&ndash;</button>
+              <input type="number" maxlength="2" value="${cart[key]}">
+              <button class="plus">+</button>
+            </div>
+            <div class="list-item price">${data[key].price * cart[key]}</div>
+          </div>
+        </div>`;
+        console.log(out);
+        printCart(out);
+      }
+    });
+
     //написать открывашку окна
     modalCart.style.display = "block";
     // modalCart.style.opacity = "100%";
@@ -170,8 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       // modalCart.style.opacity = "0%";
       modalCart.style.display = "none";
-
-      console.log(event.target.classList);
     }
   };
 
