@@ -161,20 +161,28 @@ document.addEventListener("DOMContentLoaded", () => {
     cartOut = document.createElement("div");
     cartOut.className = "list-item";
     cartOut.innerHTML = out;
-    console.log(cartList);
+    // console.log(cartList);
     cartList.append(cartOut);
     // checkCart();
   }
 
   const openModal = (event) => {
     // прочитать карточки из local storage
-    // console.log(cart);
+    let padding = window.innerWidth - document.body.offsetWidth;
+    // console.log(`"${padding}px"`);
+
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = `${padding}px`;
+
     cartList.textContent = "";
     let out = "";
     $.getJSON("service.json", function (data) {
       // console.log(data);
       for (var key in cart) {
-        out = `<img src="${data[key].img}" alt="${data[key].type}">
+        out = `
+        <div class="list-item">
+        <img src="${data[key].img}" alt="${data[key].type}">
+        </div>
         <div class="info">
           <div class="list-item type">
             <span>${data[key].type}</span>
@@ -188,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="list-item price">${data[key].price * cart[key]}</div>
           </div>
         </div>`;
-        console.log(out);
+        // console.log(out);
         printCart(out);
       }
     });
@@ -200,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeModal = (event) => {
     //написать открывашку окна
+
     let close = event.target;
     if (
       close.classList.contains("popup") ||
@@ -207,6 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       // modalCart.style.opacity = "0%";
       modalCart.style.display = "none";
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     }
   };
 

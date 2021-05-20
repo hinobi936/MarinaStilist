@@ -563,10 +563,19 @@ footer {
   margin: 0px 10px;
 }
 
+.info {
+  width: 100%;
+}
+.type {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
 .count-price {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: center;
 }
 
 .plus,
