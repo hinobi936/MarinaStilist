@@ -148,7 +148,7 @@ a.navbar-brand {
 
 .about-bg {
   overflow: hidden;
-  background: url(../IMG/bg3.jpg) no-repeat center;
+  background: url(../IMG/bg3.png) no-repeat center;
   -webkit-background-size: cover;
   background-size: contain;
   position: relative;
