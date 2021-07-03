@@ -208,7 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeModal = (event) => {
     //написать открывашку окна
-
     let close = event.target;
     if (
       close.classList.contains("popup") ||
